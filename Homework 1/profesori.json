@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Cloud Strife",
+    "subject": "History"
+  },
+  {
+    "name": "Tifa Lockhart",
+    "subject": "Mathematics"
+  },
+  {
+    "name": "Gordon Freeman",
+    "subject": "Physics"
+  },
+  {
+    "name": "Jeff Mangum",
+    "subject": "Music"
+  },
+  {
+    "name": "Cait Sith",
+    "subject": "Chemistry"
+  },
+  {
+    "name": "Harrier Du Bois",
+    "subject": "Physical Education"
+  },
+  {
+    "name": "Kim Kitsuragi",
+    "subject": "Geography"
+  },
+  {
+    "name": "Arthur Morgan",
+    "subject": "English Literature"
+  },
+  {
+    "name": "Trevor Philips",
+    "subject": "Philosophy"
+  },
+  {
+    "name": "Toriel Dreemurr",
+    "subject": "Arts and Crafts"
+  }
+]
