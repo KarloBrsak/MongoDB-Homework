@@ -4,8 +4,8 @@
 
 //? Домашна 2
 //? Да се имплементира VIEW, да има сопствени рути
-//? "/bloks" - на GET да се прикажат сите блогови
-//? "/bloks" = на POST метода да се креира нов пост
+//? "/blogs" - на GET да се прикажат сите блогови
+//? "/blogs" = на POST метода да се креира нов пост
 //?
 
 // mongodb+srv://kbrsak:<password>@cluster0.pzncpzh.mongodb.net/?retryWrites=true&w=majority
