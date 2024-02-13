@@ -15,12 +15,14 @@ const mongoose = require('mongoose');
 const actorsController = require('./controller/actorsController');
 const moviesController = require('./controller/moviesController');
 const singersController = require('./controller/singersController');
-const connectToDatabase = require('./database/database');
+const actorsView = require('./controller/actorsView');
+const database = require('./database/database');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.set('view engine', 'ejs');
 
-connectToDatabase();
+database.connectToDatabase();
 
 //Актери
 app.get('/api/v1/actors', actorsController.getActors);
@@ -33,6 +35,9 @@ app.post('/api/v1/singers', singersController.createSinger);
 //Филмови
 app.get('/api/v1/movies', moviesController.getMovies);
 app.post('/api/v1/movies', moviesController.createMovie);
+
+//EJS - Сите актери
+app.get('/actors', actorsView.getActors);
 
 const port = 10000;
 app.listen(port, () => {
