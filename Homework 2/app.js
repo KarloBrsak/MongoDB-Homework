@@ -15,19 +15,11 @@ const mongoose = require('mongoose');
 const actorsController = require('./controller/actorsController');
 const moviesController = require('./controller/moviesController');
 const singersController = require('./controller/singersController');
+const connectToDatabase = require('./database/database');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const connectToDatabase = async () => {
-  try {
-    await mongoose.connect(
-      'mongodb+srv://kbrsak:apiY4NpHZtVxMnPI@cluster0.pzncpzh.mongodb.net/Homework-2?retryWrites=true&w=majority'
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
 connectToDatabase();
 
 //Актери
