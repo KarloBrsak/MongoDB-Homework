@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <h2>List of Singers</h2>
+
+    <ul>
+      <% singers.forEach(singer => { %>
+      <li>
+        <%= singer.name %> - <%= singer.age %> years old - Genre: <%=
+        singer.genre %>
+        <a href="/singers/<%= singer._id %>">View Singer</a>
+        <form action="/singers/delete/<%= singer._id %>" method="GET">
+          <button type="submit">Delete singer</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+
+    <form action="/singers" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" />
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" />
+      <button type="submit">Add singer</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <h2>List of Movies</h2>
+
+    <ul>
+      <% movies.forEach(movie => { %>
+      <li>
+        <%= movie.name %> - Released in <%= movie.year %> - Directed by <%=
+        movie.director %>
+        <a href="/movies/<%= movie._id %>">View Movie</a>
+        <form action="/movies/delete/<%= movie._id %>" method="GET">
+          <button type="submit">Delete movie</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+
+    <form action="/movies" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <label for="year">Year:</label>
+      <input type="text" id="year" name="year" />
+      <label for="director">Director:</label>
+      <input type="text" id="director" name="director" />
+      <button type="submit">Add movie</button>
+    </form>
+  </body>
+</html>

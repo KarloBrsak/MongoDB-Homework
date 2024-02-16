@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <h2>List of Actors</h2>
+
+    <ul>
+      <% actors.forEach(actor => { %>
+      <li>
+        <%= actor.name %> - <%= actor.age %> - <%= actor.nationality %>
+        <a href="/actors/<%= actor._id %>">View Actor</a>
+        <form action="/actors/delete/<%= actor._id %>" method="GET">
+          <button type="submit">Delete actor</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+
+    <form action="/actors" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" />
+      <label for="nationality">Nationality:</label>
+      <input type="text" id="nationality" name="nationality" />
+      <button type="submit">Add actor</button>
+    </form>
+  </body>
+</html>
