@@ -1,0 +1,26 @@
+const mongoose = require('mongoose');
+
+const adSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, 'Please add a title for your ad'],
+    maxlength: [255, 'Title is too long'],
+  },
+  description: {
+    type: String,
+    required: [true, 'Please add a description for your ad'],
+    minlength: 10,
+  },
+  price: {
+    type: Number,
+    required: [true, 'Please add a price for your ad'],
+  },
+  contact: {
+    type: String,
+    required: [true, 'Please add your contact information'],
+  },
+});
+
+const Ad = mongoose.model('Ad', adSchema);
+
+module.exports = Ad;
